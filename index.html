@@ -965,16 +965,26 @@
   const calculateWorkXPOutside = () => {
     const value = parseInt(workOutsideCanadaElement.value);
     if (value === 1 || value === 2) {
-      if (minimumCLB >= 9 || yearsCanadianWorkExperience >= 2) {
+      if (minimumCLB >= 9) {
         skillTransferabilityFactors += 25;
-      } else if (minimumCLB == 7 || minimumCLB == 8 || yearsCanadianWorkExperience == 1) {
+      } else if (minimumCLB == 7 || minimumCLB == 8) {
         skillTransferabilityFactors += 13;
       }
-    } else if (value >= 3) {
-      if (minimumCLB >= 9 || yearsCanadianWorkExperience >= 2) {
-        skillTransferabilityFactors += 50;
-      } else if (minimumCLB == 7 || minimumCLB == 8 || yearsCanadianWorkExperience == 1) {
+      if (yearsCanadianWorkExperience === 1 || yearsCanadianWorkExperience === 2) {
         skillTransferabilityFactors += 25;
+      } else if (yearsCanadianWorkExperience >= 3) {
+        skillTransferabilityFactors += 50;
+      }
+    } else if (value >= 3) {
+      if (minimumCLB >= 9) {
+        skillTransferabilityFactors += 50;
+      } else if (minimumCLB == 7 || minimumCLB == 8) {
+        skillTransferabilityFactors += 25;
+      }
+      if (yearsCanadianWorkExperience === 1 || yearsCanadianWorkExperience === 2) {
+        skillTransferabilityFactors += 25;
+      } else if (yearsCanadianWorkExperience >= 3) {
+        skillTransferabilityFactors += 50;
       }
     }
   };
@@ -986,7 +996,6 @@
     if (valueGeneral > value) {
       value = valueGeneral;
     }
-    console.log(value);
 
     let points = 0;
     if (value === 1) {
@@ -1275,6 +1284,7 @@
 
   const calculateEducationPointsEE = () => {
     const value = parseInt(educationElement.value);
+
     let points = 0;
     let extraPoints = 0;
     if (value === 2) {
@@ -1304,9 +1314,9 @@
       }
       points = spouseFlag ? 91 : 98;
       if (minimumCLB == 7 || minimumCLB == 8) {
-        skillTransferabilityFactors += 25;
+        skillTransferabilityFactors += 13;
       } else if (minimumCLB >= 9) {
-        skillTransferabilityFactors += 50;
+        skillTransferabilityFactors += 25;
       }
     } else if (value === 5) {
       if (yearsCanadianWorkExperience == 1) {
@@ -1316,9 +1326,9 @@
       }
       points = spouseFlag ? 112 : 120;
       if (minimumCLB == 7 || minimumCLB == 8) {
-        skillTransferabilityFactors += 25;
+        skillTransferabilityFactors += 13;
       } else if (minimumCLB >= 9) {
-        skillTransferabilityFactors += 50;
+        skillTransferabilityFactors += 25;
       }
     } else if (value === 6) {
       if (yearsCanadianWorkExperience == 1) {
@@ -1595,7 +1605,6 @@
     calculateSkillTransferSkillsEE();
     skillTransferabilityFactors = skillTransferabilityFactors > 100 ? 100 : skillTransferabilityFactors;
     totalPointsEE += skillTransferabilityFactors;
-
     if (totalPointsEE > 1200) {
       totalPointsEE = 1200;
     }
@@ -1636,7 +1645,6 @@
   };
 
   const canadianExperienceClass = () => {
-    console.log('in cec', yearsCanadianWorkExperience >= 1 && minimumCLB >= 7);
     return yearsCanadianWorkExperience >= 1 && minimumCLB >= 7;
   };
 
