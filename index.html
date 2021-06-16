@@ -11,11 +11,14 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
+
+    <script src="https://kit.fontawesome.com/f22e92c8cb.js" crossorigin="anonymous"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
+    <!-- Calculator created by Maickel Siqueira: https://www.maickel.ca https://github.com/mksiq . All script code rights reserved to the creator of this page and to RDC -->
     <style>
       :root {
         --red: #a62224;
@@ -23,6 +26,15 @@
         --gradient-1: #f8a369;
         --gradient-2: #fdbe2b;
         --green: rgb(97, 162, 41);
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: var(--red);
       }
 
       .transparent {
@@ -77,8 +89,36 @@
       <div class="container mt-5">
         <div class="container">
           <div class="form-group mb-3 container p-4 shadow-sm p-3 mb-5 bg-body rounded">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab nostrum veniam vitae dolore adipisci nulla
-            aspernatur voluptates enim rem velit ipsam delectus cupiditate, laboriosam eum saepe? Iste rem maxime.
+            <p class="text-center">Bem-vindos à nossa calculadora de imigração (versão Beta).</p>
+            <p>
+              O Express Entry gerencia os programas Federal Skilled Worker (FSW), Federal Skilled Trades (FST) e o
+              Canadian Experience Class (CEC). O Express Entry primeiro avalia, com base nas suas respostas, se você se
+              qualifica num desses programas e depois atribui uma nota a você como candidato à imigração canadense. Esta
+              nossa calculadora pretende avaliar se você se classifica no FSW e/ou no CEC, bem como que nota que você
+              poderá ter no Express Entry. Escolhendo as opções certas, você também conseguirá projetar o seu futuro no
+              Express Entry.
+            </p>
+            <p>
+              Nós te lembramos que essa é uma projeção com base nas informações que você nos dá. Se quiser discutir
+              sobre a sua imigração ao Canadá; como colocar o perfil ativo; como melhorar a sua nota; enfim, como
+              realizar esse sonho, nós estamos à disposição. A nossa intenção é te dar um apoio no planejamento. Nós
+              esperamos que você saiba que estamos à disposição para te orientar sobre a sua classificação e nota
+              esperada do Express Entry. Contudo, a certeza da classificação e da nota serão confirmadas quando você
+              colocar o seu perfil ativo no sistema Express Entry.
+            </p>
+
+            <p class="text-center">Quer imigrar? Quer saber mais? Tem um feedback pra gente?</p>
+            <p class="text-center">
+              <span class="m-5">
+                <a
+                  href="https://rdccanada.ca/wp-content/uploads/2021/05/call-whatsapp-rdc-canada-rodrigo-coelho-copy-768x270.png"
+                  target="_blank"
+                >
+                  <i class="fab fa-whatsapp"></i>&nbsp; WhatsApp
+                </a>
+              </span>
+              <a href="mailto:someone@example.com" class="m-5"><i class="far fa-envelope"></i>&nbsp; E-mail </a>
+            </p>
           </div>
           <div class="row">
             <h2 class="text-center">Pontuação</h2>
@@ -178,7 +218,7 @@
                   <option value="3">Ensino Superior de 1 ano</option>
                   <option value="4">Ensino Superior de 2 anos</option>
                   <option value="5">Ensino Superior de 3 anos ou mais</option>
-                  <option value="6">2 ou mais Ensino Superior com pelo menos um deles de 3 anos ou mais</option>
+                  <option value="6">Mestrado ou Doutorado de pelo menos um ano</option>
                 </select>
                 <input class="col-2" type="text" placeholder="0" id="pointsEducationCanada" readonly />
               </div>
@@ -217,6 +257,31 @@
         </div>
         <div class="form-group mb-3 container p-4 shadow-sm p-3 mb-5 bg-body rounded">
           <h3 class="red-text fw-bold">Informações Língua</h3>
+          <div class="container text-muted">
+            <p>
+              O Canadá aceita a prova de proficiência do inglês e do francês. Para tanto, o governo canadense criou o
+              CLB/NCLB como a medida padrão para descrever, medir e reconhecer como imigrantes conseguem se comunicar em
+              inglês ou francês. Para o idioma inglês, você terá que fazer:
+            </p>
+            <ul>
+              <li>IELTS General ou</li>
+              <li>CElPIP General</li>
+            </ul>
+            <p>Para o idioma francês, você terá que fazer:</p>
+            <ul>
+              <li>TEF ou</li>
+              <li>TCF</li>
+            </ul>
+            <p>
+              Veja neste
+              <a
+                href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/standard-requirements/language-requirements/test-equivalency-charts.html"
+                target="_blank"
+                >link</a
+              >
+              as tabelas de conversões de cada prova para o CLB.
+            </p>
+          </div>
           <div class="row"></div>
           <div class="row">
             <div class="col-sm-12 col-md-6 mb-2">
@@ -357,7 +422,20 @@
         <div class="form-group mb-3 container p-4 shadow-sm p-3 mb-5 bg-body rounded">
           <div class="row">
             <h3 class="red-text fw-bold">Informações Profissionais</h3>
-
+            <div class="container text-muted">
+              <p>
+                NOC (National Occupational Classification) é o sistema canadense para descrever ocupações profissionais.
+                Em linhas gerais, funciona da seguinte maneira:
+              </p>
+              <ul>
+                <li>NOC 0: trabalhos/profissões gerenciais</li>
+                <li>NOC A: empregos profissionais que geralmente exigem um diploma universitário</li>
+                <li>
+                  NOC B: empregos técnicos e profissões especializadas que geralmente exigem um diploma universitário ou
+                  treinamento como aprendiz
+                </li>
+              </ul>
+            </div>
             <div class="col-sm-12 col-md-6 mb-2">
               <label for="workXp">Experiência canadense</label>
               <span
@@ -416,6 +494,16 @@
                 <input class="col-2" type="text" placeholder="0" id="pointsTrade" readonly />
               </div>
             </div>
+            <div class="col-sm-12 col-md-6 mb-2 d-none" id="nocCanadaDiv">
+              <label for="nocCanada">NOC da experiência canadense</label>
+              <div class="d-flex">
+                <select class="col-10" id="nocCanada">
+                  <option value="0">0 ou A</option>
+                  <option value="1">B</option>
+                </select>
+                <input class="col-2 transparent" type="text" placeholder="0" id="pointsWorkXp" readonly />
+              </div>
+            </div>
           </div>
         </div>
         <!-- Fim Profissionais -->
@@ -440,7 +528,7 @@
                 class="more-information"
                 data-bs-toggle="tooltip"
                 data-bs-placement="top"
-                title="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet, tempore."
+                title="Oferta atrelada a uma LMIA válida"
               >
                 <span class="interrogation">?</span>
               </span>
@@ -959,6 +1047,11 @@
       adaptabilityFSW += 10;
     }
     pointsWorksXpElement.placeholder = points;
+    if (yearsCanadianWorkExperience >= 1) {
+      document.getElementById('nocCanadaDiv').className = 'col-sm-12 col-md-6 mb-2 d-block';
+    } else {
+      document.getElementById('nocCanadaDiv').className = 'col-sm-12 col-md-6 mb-2 d-none';
+    }
     return points;
   };
 
@@ -1645,7 +1738,10 @@
   };
 
   const canadianExperienceClass = () => {
-    return yearsCanadianWorkExperience >= 1 && minimumCLB >= 7;
+    let nocCanada = parseInt(document.getElementById('nocCanada').value);
+    return nocCanada == 0
+      ? yearsCanadianWorkExperience >= 1 && minimumCLB >= 7
+      : yearsCanadianWorkExperience >= 1 && minimumCLB >= 5;
   };
 
   selects.forEach((input) => {
